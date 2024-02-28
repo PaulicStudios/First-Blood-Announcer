@@ -7,7 +7,7 @@ By default, skips first bloods achieved before the script was run but can be con
 ## Usage
 
 ```
-Usage: python first-blood-announcer.py [-h] [--webhook WEBHOOK] [--ctfd CTFD] [--token TOKEN] [--existing] [--interval INTERVAL]
+Usage: python first-blood-announcer.py [-h] [--webhook WEBHOOK] [--ctfd CTFD] [--token TOKEN] [--existing] [--interval INTERVAL] [--db DB]
 
 Announce CTF first bloods from CTFd on Discord
 
@@ -18,10 +18,16 @@ options:
   --token TOKEN        CTFd Access Token
   --existing           Announce existing solves
   --interval INTERVAL  Refresh interval in seconds (default: 5)
+  --db DB              Database path (default: solves.db)
 ```
 
 Requires a CTFd URL, an active CTFd access token, and a Discord webhook to send the announcements to.
-Use command line options or the environment variables `WEBHOOK_URL`, `CTFD_URL`, and `CTFD_ACCESS_TOKEN` - possibly in a `.env` file.
+Can be set with command line options or the environment variables `WEBHOOK_URL`, `CTFD_URL`, and `CTFD_ACCESS_TOKEN` - possibly in a `.env` file.
+
+An existing database can be specified with `--db`. If the file does not exist, a new database is created.
+
+To change the announcement message, update the `ANNOUNCEMENT` constant in the top of the source code.
+Use `{challenge}` and `{user}` where the challenge title and username should be inserted.
 
 ## Setup
 
