@@ -100,7 +100,7 @@ An existing DB can be specified with --db. If the DB does not exist, a new is cr
         from dotenv import load_dotenv
         load_dotenv()
     except ModuleNotFoundError:
-        pass
+        print("Module 'dotenv' not found, skipping potential .env-file")
 
     # Cmd line args override environment
     args.webhook = args.webhook or os.getenv("WEBHOOK_URL")

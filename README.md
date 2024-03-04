@@ -37,6 +37,12 @@ The script requires Python 3 and uses a single (very common) external dependency
 pip install requests
 ```
 
+Optionally install `dotenv` to automatically read environment variables from a .env-file:
+
+```
+pip install python-dotenv
+```
+
 Then simply run with
 
 ```
