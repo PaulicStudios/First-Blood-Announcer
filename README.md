@@ -22,7 +22,7 @@ options:
 ```
 
 Requires a CTFd URL, an active CTFd access token, and a Discord webhook to send the announcements to.
-Can be set with command line options or the environment variables `WEBHOOK_URL`, `CTFD_URL`, and `CTFD_ACCESS_TOKEN` - possibly in a `.env` file.
+Can be set with command line options or the environment variables `WEBHOOK_URL`, `CTFD_URL`, and `CTFD_ACCESS_TOKEN` - optionally in a `.env` file.
 
 An existing database can be specified with `--db`. If the file does not exist, a new database is created.
 
@@ -52,6 +52,7 @@ python first-blood-announcer.py [OPTIONS]
 To create a Discord webhook URL, go to `Server Settings` -> `Integrations` -> `Webhooks` -> `New Webhook`.
 Choose a name (shows up as the sender of each announcement) and set the channel for the messages. Then copy the webhook URL.
 
-To create a CTFd access token, make a profile on the CTFd instance, choose `Settings` -> `Access Tokens`, click `Generate` and copy the token.
-**Note:** The script can see the same challenges as the user creating the token.
+To create a CTFd access token, make a profile on the CTFd instance, click `Settings` -> `Access Tokens`, choose an expiration date, click `Generate`, and copy the token.
+
+**Note:** The bot can see the same challenges as the user creating the token.
 Any user can create a token, but if a challenge is locked behind another, the script cannot see it before the user has unlocked it.
