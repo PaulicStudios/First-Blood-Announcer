@@ -43,7 +43,7 @@ def get_challenges(session: requests.Session, solved_only: bool=False) -> list[s
     challenges = session.get(f"{session.base_url}/api/v1/challenges", timeout=5).json().get("data", [])
 
     if solved_only:
-        challenges = [c for c in challenges if c["solves"] > 0]
+        challenges = [c for c in challenges if c.get("solves", 0) > 0]
 
     return challenges
 
