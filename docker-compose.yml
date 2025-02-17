@@ -1,0 +1,9 @@
+services:
+  first-blood-announcer:
+    container_name: first-blood-announcer
+    build: .
+    volumes:
+      - ./data:/app/data
+    env_file:
+      - .env
+    restart: unless-stopped
